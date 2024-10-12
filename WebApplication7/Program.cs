@@ -14,7 +14,7 @@ namespace WebApplication7
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<DepiContext>(options => options.UseSqlServer("Server=LAPTOP-ASFDTF01\\MSSQLSERVERR;Database=Depi;Trusted_Connection=True;Encrypt=False;"));
+            builder.Services.AddDbContext<DepiContext>(options => options.UseSqlServer("Server=.;Database=Depi;Trusted_Connection=True;Encrypt=False;"));
 
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(
                 options => options.Password.RequireDigit = true

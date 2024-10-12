@@ -2,7 +2,80 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!doctype html>
+<html class="no-js" lang="en">
+
+@* <head>
+	<!-- meta data -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<!--font-family-->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;subset=devanagari,latin-ext" rel="stylesheet">
+
+	<!-- title of site -->
+	<title>Browny</title>
+
+	<!-- For favicon png -->
+	<link rel="shortcut icon" type="image/icon" href="/HomePage/logo/favicon.png" />
+
+	<!--font-awesome.min.css-->
+	<link rel="stylesheet" href="/HomePage/css/font-awesome.min.css">
+
+	<!--flat icon css-->
+	<link rel="stylesheet" href="/HomePage/css/flaticon.css">
+
+	<!--animate.css-->
+	<link rel="stylesheet" href="/HomePage/css/animate.css">
+
+	<!--owl.carousel.css-->
+	<link rel="stylesheet" href="/HomePage/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/HomePage/css/owl.theme.default.min.css">
+
+	<!--bootstrap.min.css-->
+	<link rel="stylesheet" href="/HomePage/css/bootstrap.min.css">
+
+	<!-- bootsnav -->
+	<link rel="stylesheet" href="/HomePage/css/bootsnav.css">
+
+	<!--style.css-->
+	<link rel="stylesheet" href="/HomePage/css/style.css">
+
+	<!--responsive.css-->
+	<link rel="stylesheet" href="/HomePage/css/responsive.css">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+ *@
+<body style="background-image: url(/HomePage/images/about/Login.jpg); background-size: cover; background-position: center;">
+	<div style=" height: 30vh;  ">
+		<br>
+		<br>
+		<br>
+		@if (User.IsInRole("Visitor"))
+		{
+            
+            <h3> Welcome @User.Identity.Name to ISIS <br><br> Book your trip now!    </h3>
+		}
+		
+	</div>
+	
+	
+		<div style=" height: 40vh;  ">
+		@if (User.Identity.IsAuthenticated == false){
+        <a href="/Account/Login"><button type="button" class="btn btn-lg btn-primary">Log in</button></a>
+        <a href="/Account/Register"><button type="button" class="btn btn-secondary btn-lg">Sign up</button></a>
+        }
+		</div>
+	
+	
+	
+</body>
+</html>
