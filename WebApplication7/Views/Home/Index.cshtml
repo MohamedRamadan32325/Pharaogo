@@ -58,13 +58,17 @@
 	<div style=" height: 30vh;  ">
 		<br>
 		<br>
-		<br>
+        <br>
+		@if (User.Identity.IsAuthenticated == false)
+		{
+			<h3> Welcome to ISIS <br><br> Book your trip now!    </h3>
+		}
 		@if (User.IsInRole("Visitor"))
 		{
             
             <h3> Welcome @User.Identity.Name to ISIS <br><br> Book your trip now!    </h3>
 		}
-		
+     
 	</div>
 	
 	

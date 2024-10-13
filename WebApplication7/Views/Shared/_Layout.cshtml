@@ -63,10 +63,18 @@
                     </li>
 
                     <li><a href="#contact">Contact</a></li>
+                    <li>
+                        @if (User.Identity.IsAuthenticated == true)
+                        {
+                        <li><a href="/User/Edit">Profile</a></li>
+                            <a href="/Account/Logout">Logout</a>
+                        }
+                        </li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
-
+          
+            
             <form class="d-flex"> <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search"> <button class="btn btn-outline-success" type="submit">Search</button> </form>
 
 

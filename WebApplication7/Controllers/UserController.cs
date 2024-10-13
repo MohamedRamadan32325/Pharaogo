@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.DotNet.Scaffolding.Shared.ProjectModel;
@@ -31,16 +32,17 @@ namespace WebApplication7.Controllers
             return RedirectToAction("EditUser", new { id = id });
         }
         [HttpGet]
+        
         public IActionResult EditUser(string id)
         {
             User ss = new User();
             ss = dbContext.User.FirstOrDefault(x => x.Id == id);
             RegisterViewModel registerSeekr = new RegisterViewModel();
-            registerSeekr.Addresss = ss.Email;
+        
             registerSeekr.UserName = ss.UserName;
             registerSeekr.Email = ss.Email;
             string Idd = ss.Id;
-            registerSeekr.urll = ss.ImageUrl;
+            //registerSeekr.urll = ss.ImageUrl;
 
             return View(registerSeekr);
         }
@@ -50,16 +52,18 @@ namespace WebApplication7.Controllers
 
             User ss = dbContext.User.FirstOrDefault(x => x.Id == s.Id);
             ss.UserName = s.UserName;
-            ss.Address = s.Addresss;
+            ss.LastName = s.LastName;
+            //ss.Address = s.Addresss;
             ss.Email = s.Email;
+            ss.PhoneNumber = s.MobilePhone;
+            
 
-            if (s.Image != null)
-            {
-                var unfile = ImageSaver.SaveImage(s.Image, _webHostEnvironment);
-                ss.ImageUrl = unfile.Result;
+            //if (s.Image != null)
+            //{
+            //    var unfile = ImageSaver.SaveImage(s.Image, _webHostEnvironment);
+            //    ss.ImageUrl = unfile.Result;
 
-
-            }
+            //}
 
             string Idd = ss.Id;
 

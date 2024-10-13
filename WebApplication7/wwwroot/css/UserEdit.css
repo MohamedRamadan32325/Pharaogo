@@ -1,0 +1,114 @@
+﻿/* Ensure the container is responsive */
+.profile-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+/* Profile card styling */
+.profile-card {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 25%;
+    min-width: 200px; /* Ensure it doesn't get too small */
+    margin-bottom: 20px;
+}
+
+/* Form section styling */
+.form-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    min-width: 300px; /* Ensure form doesn't get too small */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Make sure input fields are responsive */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+
+/* Ensure responsiveness on smaller screens */
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column; /* Stack elements on small screens */
+        align-items: center;
+    }
+
+    .profile-card, .form-section {
+        width: 100%; /* Take full width on small screens */
+    }
+}
+
+/* Light form background and styling */
+.form-light {
+    background-color: #f8f9fa; /* Light background */
+    color: #333; /* Dark text */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.form-label {
+    color: #495057;
+}
+
+/* Form control styling */
+.form-control {
+    background-color: #fff; /* White input fields */
+    color: #495057;
+    border: 1px solid #ced4da; /* Light border */
+}
+
+.profile-card h4 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.profile-card p {
+    font-size: 16px;
+    color: #fff; /* White text for "Account" */
+}
+
+/* Profile navigation styling */
+.profile-nav {
+    list-style: none;
+    padding: 0;
+}
+
+    .profile-nav li {
+        margin-top: 15px;
+    }
+
+    .profile-nav a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        .profile-nav a:hover {
+            text-decoration: underline;
+        }
+
+/* Save button styling */
+.save-btn {
+    background-color: #007bff; /* Blue Save button */
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+    .save-btn:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }

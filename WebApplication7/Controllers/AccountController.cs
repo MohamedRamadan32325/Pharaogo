@@ -29,9 +29,10 @@ namespace WebApplication7.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterViewModel Userrvm)
+        public async Task<IActionResult> Register(string? MobilePhone,RegisterViewModel Userrvm)
         {
-            if(ModelState.IsValid)
+			
+			if (ModelState.IsValid)
             {
 				// Check if the email already exists
 				var existingUser = await _userManager.FindByEmailAsync(Userrvm.Email);
@@ -42,16 +43,15 @@ namespace WebApplication7.Controllers
 				}
 				User userModel = new User();
                 userModel.UserName = Userrvm.UserName;
-                userModel.Address = Userrvm.Addresss;
                 userModel.PasswordHash = Userrvm.Password;
                 userModel.Email = Userrvm.Email;
-				if (Userrvm.Image != null)
-				{
-					var unfile = ImageSaver.SaveImage(Userrvm.Image, _webHostEnvironment);
-					userModel.ImageUrl = unfile.Result;
+				//if (Userrvm.Image != null)
+				//{
+				//	var unfile = ImageSaver.SaveImage(Userrvm.Image, _webHostEnvironment);
+				//	userModel.ImageUrl = unfile.Result;
 
 
-				}
+				//}
 				IdentityResult result = await _userManager.CreateAsync(userModel, Userrvm.Password);
 
 				if (result.Succeeded ==true) 
@@ -129,7 +129,7 @@ namespace WebApplication7.Controllers
             {
                 ApplicationUser userModel = new ApplicationUser();
                 userModel.UserName = vm.UserName;
-                userModel.Address = vm.Addresss;
+                //userModel.Address = vm.Addresss;
                 userModel.PasswordHash = vm.Password;
                 IdentityResult result = await _userManager.CreateAsync(userModel, vm.Password);
                 if (result.Succeeded == true)
@@ -153,6 +153,11 @@ namespace WebApplication7.Controllers
                 }
             }
             return View(vm);
+        }
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
 
 
