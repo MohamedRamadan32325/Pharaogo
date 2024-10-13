@@ -29,7 +29,7 @@ namespace WebApplication7.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(string? MobilePhone,RegisterViewModel Userrvm)
+        public async Task<IActionResult> Register(RegisterViewModel Userrvm)
         {
 			
 			if (ModelState.IsValid)

@@ -25,8 +25,8 @@ namespace WebApplication7.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer("Server=.;Database=Depi;Trusted_Connection=True;Encrypt=False;");
-            //base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseSqlServer("Server=.;Database=Depi;Trusted_Connection=True;Encrypt=False;");
+            base.OnConfiguring(optionsBuilder);
         }
 
     }

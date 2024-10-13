@@ -5,11 +5,10 @@ namespace WebApplication7.ViewModels
 	public class RegisterViewModel
 	{
 		public string? Id { get; set; }
-
-		[Required]
-		public string? UserName { get; set; }
-
 		public string? LastName { get; set; }
+		public string? MobilePhone { get; set; }
+		[Required]
+		public string UserName { get; set; }
 
 		[Required]
 		[EmailAddress]
@@ -24,8 +23,7 @@ namespace WebApplication7.ViewModels
 		[Compare("Password")]
 		public string confirmPassword { get; set; }
 
-		[DataType(DataType.Upload)]
-		public string? MobilePhone { get; set; }  // Optional field
+	
 	}
 
 }
