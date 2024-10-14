@@ -39,5 +39,22 @@ namespace DEPI.Repositry
 			dbContext.Update(ss);
 			dbContext.SaveChanges();
 		}
+		public bool DeleteUser(string id)
+		{
+            
+            User usertodelete = dbContext.User.FirstOrDefault(x => x.Id == id);
+			if (usertodelete != null)
+			{
+				dbContext.User.Remove(usertodelete);
+				dbContext.SaveChanges();
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+			
+        }
     }
 }

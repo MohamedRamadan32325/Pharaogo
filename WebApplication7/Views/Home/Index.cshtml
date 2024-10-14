@@ -55,10 +55,17 @@
 </head>
 
 <body style="background-image: url(/HomePage/images/about/Login.jpg); background-size: cover; background-position: center;">
-	<div style=" height: 30vh;  ">
+    <div style=" height: 30vh;  ">
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessage"]
+            </div>
+        }
 		<br>
 		<br>
         <br>
+		
 		@if (User.Identity.IsAuthenticated == false)
 		{
 			<h3> Welcome to ISIS <br><br> Book your trip now!    </h3>
@@ -68,7 +75,7 @@
             
             <h3> Welcome @User.Identity.Name to ISIS <br><br> Book your trip now!    </h3>
 		}
-     
+		
 	</div>
 	
 	

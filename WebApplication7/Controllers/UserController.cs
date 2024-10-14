@@ -48,5 +48,24 @@ namespace WebApplication7.Controllers
             user_repo.UpdateUser(s);
             return RedirectToAction("Index", "Home");
         }
+        public IActionResult Delete()
+        {
+            string id = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            return RedirectToAction("Deleteuser", new { id = id });
+        }
+        public IActionResult DeleteUser(string id)
+        {
+            // Delete the user from the database
+            user_repo.DeleteUser(id);
+            signInManager.SignOutAsync();
+
+            // Set a success message to be displayed
+            TempData["SuccessMessage"] = "The user has been successfully deleted.";
+
+            // Redirect to the Index action
+            return RedirectToAction("Index", "Home");
+        }
+
+
     }
 }
