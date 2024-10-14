@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication7.Models;
 using WebApplication7.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApplication7.Controllers
 {
@@ -114,17 +115,19 @@ namespace WebApplication7.Controllers
                 }
             }
 
-            // If ModelState is not valid, return the view with errors
+			// If ModelState is not valid, return the view with errors
             return View(loginViewModel);
-        }
+		}
         public IActionResult AddAdmin()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AddAdmin(RegisterViewModel vm)
         {
+
             if (ModelState.IsValid)
             {
                 ApplicationUser userModel = new ApplicationUser();

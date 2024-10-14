@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebApplication7.Models;
+using WebApplication7.ViewModels;
 
 namespace WebApplication7.Controllers
 {
@@ -12,8 +13,16 @@ namespace WebApplication7.Controllers
         {
             _logger = logger;
         }
+		public IActionResult LoadLoginModal()
+		{
+			return PartialView("_LoginModal");
+		}
+		public IActionResult LoadRegisterModal()
+		{
+			return PartialView("_RegisterModal");
+		}
 
-        public IActionResult Index()
+		public IActionResult Index()
         {
             return View();
         }
