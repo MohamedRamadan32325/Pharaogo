@@ -1,2 +1,2 @@
-Website link : http://pharaogo.runasp.net/
-(Windows only) 
+# **Pharaogo **     
+This is an ASP.NET Core 7.0 MVC project.
