@@ -23,8 +23,7 @@ Pharaogo is an ASP.NET Core 8.0 MVC project designed to facilitate tourists to b
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/MohamedRamadan32325/Booking-Website.git
-   cd Booking-Website/Pharaogo-master
+   git clone https://github.com/MohamedRamadan32325/Pharaogo.git
    ```
 
 2. Restore dependencies and build the project:
@@ -94,16 +93,6 @@ Pharaogo follows a traditional ASP.NET Core MVC architecture with:
 * **Razor Views** for rendering HTML
 * **Entity Framework Core** for data access and migrations
 * **Dependency Injection** for service management
-
-## API Endpoints
-
-| Method | Endpoint               | Description                       |
-| ------ | ---------------------- | --------------------------------- |
-| GET    | `/Bookings`            | Retrieve all bookings             |
-| POST   | `/Bookings/Create`     | Create a new booking              |
-| GET    | `/Users/{id}`          | Fetch user profile                |
-| GET    | `/Api/Hotels`          | List available hotel rooms (JSON) |
-| POST   | `/Api/Museums/Tickets` | Reserve museum tickets (JSON)     |
 
 ## Testing
 
